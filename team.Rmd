@@ -121,7 +121,7 @@ The barplot above shows that males appear to have significantly more accidents t
 ```{r}
 library(maps)
 library(mapproj)
-us <- readxl::read_xlsx("US_GLC.xlsx")
+us <- readxl::read_xlsx(("US_GLC.xlsx"), col_types = c("text","text","text","text","text","text","text","text","text","skip"))
 ust <- readxl::read_xlsx("UST_GLC.xlsx")
 
 us$STATE <- as.numeric(us$`State Code`)
@@ -183,3 +183,4 @@ part3_final %>%
 The above map displays the United States with the difference in accidents from the summer (April through Sept.) to the winter (Oct. through March). Higher values, also in red, mean that there are more accidents in the summer, while blue displays have more in the winter months. 
 
 Some takeaways from this plot are that Florida and Texas both have many more accidents in the winter months, likely from increased traffic as more people travel to the south during these months. The flip side is that states like Illinois, Pennsylvania and New York appear to have more accidents during the summer. I will chalk that up to more people visiting these states in the warmer months, as well as people simply not driving as carefully without snow or ice on the roads.
+
